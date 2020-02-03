@@ -1,3 +1,4 @@
+#**--utf-8**
 import re
 
 import requests
@@ -80,7 +81,7 @@ def parser(img_html):
 
 
 def output_to_file(results):
-    with open("../poem_img_url.txt", "a") as file_object:
+    with open("../poem_img_url_3.txt", "a", encoding='UTF-8') as file_object:
         for item in results:
             file_object.write(item)
         file_object.write("\n")
@@ -106,10 +107,10 @@ if __name__ == '__main__':
         img_url_to_display_en = parser(uns_en_html)
         img_url = img_url_to_display_cn + img_url_to_display_en
         count += 1
-        print(count, "of 129216 ", 100 * (float(count) / float(129216)))
+        print(count, "of 27559 ", 100 * (float(count) / float(27559)))
         res_buffer.append([line, "@", str(img_url)])
 
-        if len(res_buffer) == 100:
+        if len(res_buffer) == 10:
             for item in res_buffer:
                 output_to_file(item)
             res_buffer = []

@@ -2,15 +2,16 @@ from src import formator
 
 
 def output_to_file(results):
-    with open("../ready_2_db.txt", "a") as file_object:
+    with open("../ready_2_db_v3.txt", "a", encoding="UTF-8") as file_object:
         for item in results:
             file_object.write(item)
         file_object.write("\n")
 
 
 if __name__ == '__main__':
-    url_file = formator.input_from_file("../poem_img_url_2.txt")
-    count = 57824
+    url_file = formator.input_from_file("../poem_img_url_4.txt")
+    count = 0
+    temp = []
     for line in url_file:
         infos = (str(line).strip()).split("@")
         if count % 2 != 0:

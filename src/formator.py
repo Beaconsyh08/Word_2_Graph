@@ -1,5 +1,5 @@
 def input_from_file(path):
-    file_object = open(path, 'r')
+    file_object = open(path, 'r', encoding='UTF-8')
     return file_object
 
 

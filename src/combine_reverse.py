@@ -80,7 +80,7 @@ def parser(img_html):
 
 
 def output_to_file(results):
-    with open("../poem_img_url_2.txt", "a") as file_object:
+    with open("../poem_img_url_4.txt", "a", encoding='UTF-8') as file_object:
         for item in results:
             file_object.write(item)
         file_object.write("\n")
@@ -90,7 +90,7 @@ if __name__ == '__main__':
     translator = Translator()
 
     count = 0
-    for line in reversed(list(open("../poem_with_keyword.txt"))):
+    for line in reversed(list(open("../poem_with_keyword.txt", encoding='UTF-8'))):
         poem, keyword = poem_keyword_split(line)
         cn_text = keyword_format(keyword)
         en_text = translate(translator, cn_text, "zh-cn", "en")
@@ -105,6 +105,6 @@ if __name__ == '__main__':
         img_url_to_display_en = parser(uns_en_html)
         img_url = img_url_to_display_cn+img_url_to_display_en
         count += 1
-        print(count, "of 129216 ", 100 * (float(count) / float(129216)))
+        print(count, "of 27559 ", 100 * (float(count) / float(27559)))
         output_to_file([line, "@", str(img_url)])
     poem_file.close()
