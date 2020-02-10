@@ -107,10 +107,10 @@ if __name__ == '__main__':
         img_url_to_display_en = parser(uns_en_html)
         img_url = img_url_to_display_cn + img_url_to_display_en
         count += 1
-        print(count, "of 27559 ", 100 * (float(count) / float(27559)))
+        print(count, "of 816 ", 100 * (float(count) / float(816)))
         res_buffer.append([line, "@", str(img_url)])
 
-        if len(res_buffer) == 10:
+        if len(res_buffer) == 1:
             for item in res_buffer:
                 output_to_file(item)
             res_buffer = []

@@ -9,7 +9,7 @@ def output_to_file(results):
 
 
 if __name__ == '__main__':
-    url_file = formator.input_from_file("../poem_img_url_4.txt")
+    url_file = formator.input_from_file("../poem_img_url_3.txt")
     count = 0
     temp = []
     for line in url_file:
